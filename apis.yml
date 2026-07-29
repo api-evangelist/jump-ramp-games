@@ -1,8 +1,26 @@
 aid: jump-ramp-games
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/jump-ramp-games.png
 name: Jump Ramp Games
-description: Jump Ramp Games is a company surfaced as a portfolio company of bullpen-capital and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: Jump Ramp Games was a New York City casual mobile gaming company best known for Lucktastic,
+  a free scratch-card, rewards, and instant-win app that launched on Android in 2014 and grew to roughly
+  10 million US installs across Android and iOS, consistently ranking near the top of the lifestyle
+  category. Founded by Alex Betancur and Tony Vartanian and backed by Bullpen Capital, the company paired
+  free-to-play casual gaming with performance-marketing and rewards technology. Jump Ramp Games was
+  acquired by MobilityWare in September 2019, which took over the Lucktastic franchise; the
+  jumprampgames.com domain now redirects to mobilityware.com. The company exposes no public developer,
+  API, or documentation surface, so this profile is maintained as a company record in the API Evangelist
+  network rather than an API provider.
 url: https://raw.githubusercontent.com/api-evangelist/jump-ramp-games/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,9 +30,17 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+x-status: acquired
+x-acquired-by: mobilityware
 tags:
 - Company
+- Mobile Games
+- Casual Gaming
+- Rewards
+- Consumer
+- Advertising Technology
+- New York
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,5 +48,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/jump-ramp-games-domain-security.yml
 - type: Website
   url: https://jumprampgames.com
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
