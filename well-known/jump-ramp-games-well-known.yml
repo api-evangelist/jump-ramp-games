@@ -1,0 +1,131 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  Live unauthenticated HTTPS probes of the only host this company ever owned
+  (jumprampgames.com) plus the Lucktastic product domain (lucktastic.com).
+name: Jump Ramp Games .well-known probe
+note: >-
+  RECORDED ABSENCE — no .well-known pointer is emitted from this file. Jump Ramp Games
+  was acquired by MobilityWare in September 2019 and fully absorbed. Every path on
+  jumprampgames.com now answers HTTP 301 to https://mobilityware.com/, and the
+  MobilityWare edge answers that follow-on request with HTTP 202 carrying a SiteGround
+  bot-challenge shell (<meta http-equiv="refresh" content="0;/.well-known/sgcaptcha/...">),
+  not a document. The 202s below are therefore MISSES, not hits: a challenge interstitial
+  is not a served .well-known resource. lucktastic.com behaves the same at the root and
+  returns a hard 404 on every /.well-known/ path. No security.txt, no OpenID
+  configuration, no OAuth metadata, no api-catalog, no ai-plugin.json exists for this
+  company.
+hosts:
+- host: jumprampgames.com
+  resolves: true
+  root_status: 301
+  redirects_to: https://mobilityware.com/
+  paths:
+  - path: /.well-known/security.txt
+    status: 202
+    hit: false
+    content_type: text/html
+    file: null
+    note: 301 to mobilityware.com, which returns a SiteGround captcha challenge shell.
+  - path: /.well-known/openid-configuration
+    status: 202
+    hit: false
+    content_type: text/html
+    file: null
+    note: Same catch-all challenge shell; not an OpenID Provider Metadata document.
+  - path: /.well-known/oauth-authorization-server
+    status: 202
+    hit: false
+    content_type: text/html
+    file: null
+    note: Same catch-all challenge shell; not RFC 8414 metadata.
+  - path: /.well-known/api-catalog
+    status: 202
+    hit: false
+    content_type: text/html
+    file: null
+    note: Same catch-all challenge shell; not an RFC 9727 linkset.
+  - path: /.well-known/ai-plugin.json
+    status: 202
+    hit: false
+    content_type: text/html
+    file: null
+    note: Same catch-all challenge shell; not a plugin manifest.
+  - path: /.well-known/agent-card.json
+    status: 202
+    hit: false
+    content_type: text/html
+    file: null
+    note: >-
+      Not an AgentCard. Body is HTML, not a JSON object, and carries none of
+      name/url/version/protocolVersion/capabilities/skills. No a2a/ artifact written.
+  - path: /.well-known/agent.json
+    status: 202
+    hit: false
+    content_type: text/html
+    file: null
+    note: Legacy pre-0.3 agent card path. Same HTML challenge shell; not a card.
+- host: lucktastic.com
+  resolves: true
+  root_status: 301
+  redirects_to: https://mobilityware.com/
+  paths:
+  - path: /.well-known/security.txt
+    status: 404
+    hit: false
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    hit: false
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    hit: false
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    hit: false
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    hit: false
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    hit: false
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    hit: false
+    file: null
+- host: api.jumprampgames.com
+  resolves: false
+  root_status: null
+  note: NXDOMAIN — no API subdomain has ever been delegated for this company.
+also_probed:
+  note: >-
+    STEP 0b contract discovery, recorded here because there is no openapi/, graphql/ or
+    mcp/ directory to record it in. Every candidate below missed on both live hosts by
+    the same mechanism as the .well-known paths above (301 -> mobilityware.com challenge
+    shell on jumprampgames.com, hard 404 on lucktastic.com). None parsed as OpenAPI,
+    Swagger, GraphQL SDL or an MCP tools/list response.
+  paths:
+  - /openapi.json
+  - /openapi.yaml
+  - /swagger.json
+  - /v1/openapi.json
+  - /api-docs
+  - /docs
+  - /redoc
+  - /graphql
+  - /llms.txt
+  github_orgs_checked:
+  - {org: jumprampgames, status: 404}
+  - {org: JumpRampGames, status: 404}
+  - {org: jump-ramp-games, status: 404}
+  - {org: lucktastic, status: 404}
+summary:
+  hosts_probed: 3
+  paths_probed: 21
+  real_documents_found: 0
+  pointer_emitted: false

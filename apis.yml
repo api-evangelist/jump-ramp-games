@@ -30,7 +30,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-08-12'
 x-status: acquired
 x-acquired-by: mobilityware
 tags:
@@ -53,7 +53,23 @@ common:
 - type: Website
   url: https://jumprampgames.com
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 1
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Jump Ramp Games was acquired by MobilityWare in September 2019 and fully absorbed;
+    jumprampgames.com and the Lucktastic product domain both now answer HTTP 301 to
+    https://mobilityware.com/, so there is no Jump Ramp surface left to profile — no
+    developer site, no spec, no GitHub org (all four candidate org names 404).
+  evidence:
+  - url: https://jumprampgames.com/
+    status: 301
+  - url: https://lucktastic.com/openapi.json
+    status: 404
+  - url: https://api.github.com/orgs/jumprampgames
+    status: 404
+  checked: '2026-08-12'
